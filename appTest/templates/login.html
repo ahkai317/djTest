@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in Page</title>
+</head>
+<body>
+
+    <h1>會員登入</h1>
+    <hr>
+
+    <form action="/login/" method="post">
+
+        <!-- django form驗證機制!!!! -->
+        {% csrf_token %}
+
+        <input type="text" name="user" placeholder="user name">
+        <br><br>
+        <input type="password" name="pwd" placeholder="password">
+        <br><br><br>
+
+        <input type="submit" value="送出">
+        <span style="color: deeppink;">{{ error_msg }}</span>
+    </form>
+</body>
+</html>

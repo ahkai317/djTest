@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-UP Page</title>
+</head>
+<body>
+
+    <h1>Sign UP</h1>
+
+    <!-- 這邊action可以不用寫(post給原頁面route) -->
+    <form action="/info/add/" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="user name">
+        <input type="password" name="pwd" placeholder="password"> <br><br>
+        <input type="text" name="age" placeholder="your age"> <br><br>
+
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>

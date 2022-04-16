@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TemPlates Language test - TPL</title>
+</head>
+<body>
+    <!-- TemPlates Language test -->
+    <h1>．Templates Language Test．</h1>
+
+    <!-- n1 Str. -->
+    <div>name : {{ n1 }}</div>
+    <hr/>
+
+    <!-- n2 List -->
+    <div>status : {{ n2.0 }}</div>
+    <div>{{ n2.1 }}</div>
+    <div>{{ n2.2 }}</div>
+
+    <div>
+        {% for i in n2 %}
+            <span>{{ i }}</span> <br>
+        {% endfor %}
+    </div>
+    <hr/>
+
+    <!-- n3 Dict. -->
+    {{ n3 }}
+    {{ n3.name }}
+    {{ n3.salary }}
+    {{ n3.role }}
+
+    <ul>
+        {% for i in n3.keys %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for k, v in n3.items %}
+        <li> {{ k }} = {{ v }} </li>
+        {% endfor %}
+    </ul>
+
+    <!-- n4 List in Dict. -->
+    <hr/>
+    {{ n4 }}<br>
+    {{ n4.0 }}{{ n4.1 }}{{ n4.2 }} <br><br>
+
+    <div>
+        {% for i in n4 %}
+            <div>
+                {% for j, k in i.items %}
+                    <span>{{j}} : {{k}}</span><br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+
+    <!-- If, elif, else Loops -->
+    {% if n1 == '陳愷' %}
+        <h2>94我La</h2>
+    {% elif n1 == 'xxx'%}
+        <h1>錯</h1>
+    {% else %}
+        <h1>太神了</h1>
+    {% endif %}
+
+</body>
+</html>
